@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Pro | 终极井字棋</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="glass-container">
+        <header>
+            <h1>TIC <span class="highlight">TAC</span> TOE</h1>
+            <div class="mode-selector">
+                <button id="pvp-btn" class="mode-btn active" data-mode="pvp">玩家对战</button>
+                <button id="pvc-btn" class="mode-btn" data-mode="pvc">挑战 AI</button>
+            </div>
+            <div id="status-display" class="status">玩家 X 的回合</div>
+        </header>
+
+        <div class="game-board" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+
+        <footer>
+            <button id="reset-btn" class="reset-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                    <path d="M3 3v5h5"></path>
+                </svg>
+                重新开始
+            </button>
+        </footer>
+    </main>
+
+    <div id="winner-modal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <h2 id="winner-title">胜利!</h2>
+            <p id="winner-message">Player X Wins!</p>
+            <button id="new-game-btn" class="primary-btn">再来一局</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
