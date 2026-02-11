@@ -82,10 +82,15 @@ class TicTacToe {
 
     makeMove(index, player) {
         this.board[index] = player;
-        // Use a span to handle the animation cleanly
-        this.cells[index].innerHTML = `<span class="mark">${player}</span>`;
+
+        // Security Hardening: Use createElement instead of innerHTML to prevent XSS
+        this.cells[index].innerHTML = ''; // Start clean
+        const markSpan = document.createElement('span');
+        markSpan.classList.add('mark');
+        markSpan.textContent = player; // Safely sets text content
+        this.cells[index].appendChild(markSpan);
+
         this.cells[index].classList.add(player.toLowerCase());
-        // Removed setAttribute data-content to avoid confusion, though CSS is cleaned up too.
 
         const result = this.checkResult();
 
